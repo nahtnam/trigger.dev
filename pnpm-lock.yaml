@@ -946,7 +946,6 @@ importers:
       '@trigger.dev/tsconfig': workspace:*
       '@types/debug': ^4.1.7
       '@types/node': '18'
-      '@types/node-fetch': 2.6.x
       '@types/slug': ^5.0.3
       '@types/uuid': ^9.0.0
       '@types/ws': ^8.5.3
@@ -958,7 +957,6 @@ importers:
       get-caller-file: ^2.0.5
       git-remote-origin-url: ^4.0.0
       git-repo-info: ^2.1.1
-      node-fetch: 2.6.x
       rimraf: ^3.0.2
       slug: ^6.0.0
       terminal-link: ^3.0.0
@@ -979,7 +977,6 @@ importers:
       get-caller-file: 2.0.5
       git-remote-origin-url: 4.0.0
       git-repo-info: 2.1.1
-      node-fetch: 2.6.12_encoding@0.1.13
       slug: 6.1.0
       terminal-link: 3.0.0
       ulid: 2.3.0
@@ -991,7 +988,6 @@ importers:
       '@trigger.dev/tsconfig': link:../../config-packages/tsconfig
       '@types/debug': 4.1.7
       '@types/node': 18.14.0
-      '@types/node-fetch': 2.6.4
       '@types/slug': 5.0.3
       '@types/uuid': 9.0.0
       '@types/ws': 8.5.4
@@ -23388,19 +23384,6 @@ packages:
         optional: true
     dependencies:
       whatwg-url: 5.0.0
-
-  /node-fetch/2.6.12_encoding@0.1.13:
-    resolution: {integrity: sha512-C/fGU2E8ToujUivIO0H+tpQ6HWo4eEmchoPIoXtxCrVghxdKq+QOHqEZW7tuP3KlV3bC8FRMO5nMCC7Zm1VP6g==}
-    engines: {node: 4.x || >=6.0.0}
-    peerDependencies:
-      encoding: ^0.1.0
-    peerDependenciesMeta:
-      encoding:
-        optional: true
-    dependencies:
-      encoding: 0.1.13
-      whatwg-url: 5.0.0
-    dev: false
 
   /node-fetch/2.6.7:
     resolution: {integrity: sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==}

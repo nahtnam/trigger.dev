@@ -2,13 +2,13 @@
   "extends": "@trigger.dev/tsconfig/node18.json",
   "include": ["./src/**/*.ts", "tsup.config.ts"],
   "compilerOptions": {
+    "lib": ["DOM", "DOM.Iterable"],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "paths": {
       "@trigger.dev/core/*": ["../core/src/*"],
       "@trigger.dev/core": ["../core/src/index"]
     },
-    "lib": ["DOM", "DOM.Iterable"],
     "declaration": false,
     "declarationMap": false
   },

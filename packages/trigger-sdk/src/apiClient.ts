@@ -26,7 +26,6 @@ import {
   RegisterTriggerBodyV2,
 } from "@trigger.dev/core";
 
-import fetch, { type RequestInit } from "node-fetch";
 import { z } from "zod";
 
 export type ApiClientOptions = {
