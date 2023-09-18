@@ -1,4 +1,5 @@
 // Create a logger class that uses the debug package internally
+import { Buffer } from "node:buffer";
 
 /**
  * Represents different log levels.

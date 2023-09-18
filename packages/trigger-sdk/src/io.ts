@@ -29,6 +29,7 @@ import { DynamicTrigger } from "./triggers/dynamic";
 import { ExternalSource, ExternalSourceParams } from "./triggers/externalSource";
 import { DynamicSchedule } from "./triggers/scheduled";
 import { EventSpecification, TaskLogger, TriggerContext } from "./types";
+import { Buffer } from "node:buffer";
 
 export type IOTask = ServerTask;
 
