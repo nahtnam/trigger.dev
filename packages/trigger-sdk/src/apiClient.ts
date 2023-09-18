@@ -69,39 +69,6 @@ export class ApiClient {
     this.#logger = new Logger("trigger.dev", this.#options.logLevel);
   }
 
-  async registerEndpoint(options: { url: string; name: string }): Promise<EndpointRecord> {
-    const apiKey = await this.#apiKey();
-
-    this.#logger.debug("Registering endpoint", {
-      url: options.url,
-      name: options.name,
-    });
-
-    const response = await fetch(`${this.#apiUrl}/api/v1/endpoints`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({
-        url: options.url,
-        name: options.name,
-      }),
-    });
-
-    if (response.status >= 400 && response.status < 500) {
-      const body = await response.json();
-
-      throw new Error(body.error);
-    }
-
-    if (response.status !== 200) {
-      throw new Error(`Failed to register entry point, got status code ${response.status}`);
-    }
-
-    return await response.json();
-  }
-
   async runTask(runId: string, task: RunTaskBodyInput) {
     const apiKey = await this.#apiKey();
 
@@ -461,7 +428,7 @@ async function zodfetch<TResponseBody extends any, TOptional extends boolean = f
   }
 
   if (response.status >= 400 && response.status < 500) {
-    const body = await response.json();
+    const body: any = await response.json();
 
     throw new Error(body.error);
   }
