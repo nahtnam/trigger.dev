@@ -21,13 +21,12 @@ import { slugifyId } from "../utils";
 import { SerializableJson } from "@trigger.dev/core";
 import { ConnectionAuth } from "@trigger.dev/core";
 import { Prettify } from "@trigger.dev/core";
-import { Buffer } from "node:buffer";
 
 export type HttpSourceEvent = {
   url: string;
   method: string;
   headers: Record<string, string>;
-  rawBody?: Buffer | null;
+  rawBody?: Uint8Array | null;
 };
 
 type SmtpSourceEvent = {

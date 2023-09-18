@@ -6,7 +6,7 @@ export default defineConfig([
     config: "tsconfig.build.json",
     entry: ["./src/index.ts"],
     outDir: "./dist",
-    platform: "neutral",
+    platform: "node",
     format: ["cjs"],
     legacyOutput: true,
     sourcemap: true,

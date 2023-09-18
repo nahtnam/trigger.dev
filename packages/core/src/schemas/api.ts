@@ -15,7 +15,6 @@ import {
 } from "./schedules";
 import { CachedTaskSchema, TaskSchema } from "./tasks";
 import { EventSpecificationSchema, TriggerMetadataSchema } from "./triggers";
-import { Buffer } from "node:buffer";
 
 export const UpdateTriggerSourceBodyV1Schema = z.object({
   registeredEvents: z.array(z.string()),
@@ -139,7 +138,7 @@ export const HttpSourceRequestSchema = z.object({
   url: z.string().url(),
   method: z.string(),
   headers: z.record(z.string()),
-  rawBody: z.instanceof(Buffer).optional().nullable(),
+  rawBody: z.instanceof(Uint8Array).optional().nullable(),
 });
 
 export type HttpSourceRequest = z.infer<typeof HttpSourceRequestSchema>;
