@@ -351,7 +351,7 @@ importers:
     devDependencies:
       eslint: 8.31.0
       eslint-config-prettier: 8.6.0_eslint@8.31.0
-      eslint-config-turbo: 1.10.13_eslint@8.31.0
+      eslint-config-turbo: 1.10.14_eslint@8.31.0
       eslint-plugin-react: 7.31.8_eslint@8.31.0
       typescript: 4.9.4
 
@@ -898,7 +898,7 @@ importers:
 
   packages/remix:
     specifiers:
-      '@remix-run/node': ^1.19.3
+      '@remix-run/server-runtime': ^2.0.0
       '@trigger.dev/tsconfig': workspace:*
       '@types/debug': ^4.1.7
       '@types/ws': ^8.5.3
@@ -910,7 +910,7 @@ importers:
     dependencies:
       debug: 4.3.4
     devDependencies:
-      '@remix-run/node': 1.19.3
+      '@remix-run/server-runtime': 2.0.0_typescript@4.9.5
       '@trigger.dev/tsconfig': link:../../config-packages/tsconfig
       '@types/debug': 4.1.7
       '@types/ws': 8.5.4
@@ -10361,6 +10361,11 @@ packages:
     resolution: {integrity: sha512-7Lcn7IqGMV+vizMPoEl5F0XDshcdDYtMI6uJLQdQz5CfZAwy3vvGKYSUk789qndt5dEC4HfSjviSYlSoHGL2+A==}
     engines: {node: '>=14'}
 
+  /@remix-run/router/1.9.0:
+    resolution: {integrity: sha512-bV63itrKBC0zdT27qYm6SDZHlkXwFL1xMBuhkn+X7l0+IIhNaH5wuuvZKp6eKhCD4KFhujhfhCT1YxXW6esUIA==}
+    engines: {node: '>=14.0.0'}
+    dev: true
+
   /@remix-run/serve/1.19.2-pre.0:
     resolution: {integrity: sha512-5rVnhsNO5X1lKJCcWPmOYAl30XuNuUpbAFPpUC654YqMwuulFSnY879jAFPUzeIf4Rarmb50LLkEwizcRk8vuw==}
     engines: {node: '>=14.0.0'}
@@ -10409,6 +10414,25 @@ packages:
       cookie: 0.4.2
       set-cookie-parser: 2.5.1
       source-map: 0.7.4
+
+  /@remix-run/server-runtime/2.0.0_typescript@4.9.5:
+    resolution: {integrity: sha512-HaNszj/mp/A1Qz5sVupVIXqDyeEni3nwW5iKDqGAqv0n8E6FRkzEhOtAJypRABcKWBq0M9VM3fm6IO0vaMti8Q==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      typescript: ^5.1.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@remix-run/router': 1.9.0
+      '@types/cookie': 0.4.1
+      '@web3-storage/multipart-parser': 1.0.0
+      cookie: 0.4.2
+      set-cookie-parser: 2.5.1
+      source-map: 0.7.4
+      type-fest: 4.3.1
+      typescript: 4.9.5
+    dev: true
 
   /@remix-run/testing/1.19.2-pre.0_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-QK8nZKsgFOXZez0FmbINTgNfsbwKuBFLYQTUt2EtvJ/cNTfReiVyXxjG7U320Ghb98E5/WZS2pMpHbm3U+jcbg==}
@@ -17405,13 +17429,13 @@ packages:
       eslint: 8.31.0
     dev: true
 
-  /eslint-config-turbo/1.10.13_eslint@8.31.0:
-    resolution: {integrity: sha512-Ffa0SxkRCPMtfUX/HDanEqsWoLwZTQTAXO9W4IsOtycb2MzJDrVcLmoFW5sMwCrg7gjqbrC4ZJoD+1SPPzIVqg==}
+  /eslint-config-turbo/1.10.14_eslint@8.31.0:
+    resolution: {integrity: sha512-ZeB+IcuFXy1OICkLuAplVa0euoYbhK+bMEQd0nH9+Lns18lgZRm33mVz/iSoH9VdUzl/1ZmFmoK+RpZc+8R80A==}
     peerDependencies:
       eslint: '>6.6.0'
     dependencies:
       eslint: 8.31.0
-      eslint-plugin-turbo: 1.10.13_eslint@8.31.0
+      eslint-plugin-turbo: 1.10.14_eslint@8.31.0
     dev: true
 
   /eslint-doc-generator/1.4.3_eslint@8.45.0:
@@ -18065,8 +18089,8 @@ packages:
       - typescript
     dev: true
 
-  /eslint-plugin-turbo/1.10.13_eslint@8.31.0:
-    resolution: {integrity: sha512-el4AAmn0zXmvHEyp1h0IQMfse10Vy8g5Vbg4IU3+vD9CSj5sDbX07iFVt8sCKg7og9Q5FAa9mXzlCf7t4vYgzg==}
+  /eslint-plugin-turbo/1.10.14_eslint@8.31.0:
+    resolution: {integrity: sha512-sBdBDnYr9AjT1g4lR3PBkZDonTrMnR4TvuGv5W0OiF7z9az1rI68yj2UHJZvjkwwcGu5mazWA1AfB0oaagpmfg==}
     peerDependencies:
       eslint: '>6.6.0'
     dependencies:
@@ -28650,6 +28674,11 @@ packages:
   /type-fest/3.6.0:
     resolution: {integrity: sha512-RqTRtKTzvPpNdDUp1dVkKQRunlPITk4mXeqFlAZoJsS+fLRn8AdPK0TcQDumGayhU7fjlBfiBjsq3pe3rIfXZQ==}
     engines: {node: '>=14.16'}
+    dev: true
+
+  /type-fest/4.3.1:
+    resolution: {integrity: sha512-pphNW/msgOUSkJbH58x8sqpq8uQj6b0ZKGxEsLKMUnGorRcDjrUaLS+39+/ub41JNTwrrMyJcUB8+YZs3mbwqw==}
+    engines: {node: '>=16'}
     dev: true
 
   /type-is/1.6.18:

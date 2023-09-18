@@ -1,4 +1,3 @@
-import { randomUUID } from "crypto";
 import ora from "ora";
 import { z } from "zod";
 import { getTriggerApiDetails } from "../utils/getTriggerApiDetails";
@@ -47,7 +46,7 @@ export async function sendEventCommand(path: string, anyOptions: any) {
     return;
   }
 
-  const id = options.id ?? randomUUID();
+  const id = options.id ?? crypto.randomUUID();
   const name = options.name;
 
   const spinner = ora(`[trigger.dev] Sending event ${name} with id ${id}`).start();

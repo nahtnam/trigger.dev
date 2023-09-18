@@ -11,13 +11,11 @@ import {
   RunTaskOptions,
   SendEvent,
   SendEventOptions,
-  SerializableJson,
   SerializableJsonSchema,
   ServerTask,
   UpdateTriggerSourceBodyV2,
 } from "@trigger.dev/core";
 import { AsyncLocalStorage } from "node:async_hooks";
-import { webcrypto } from "node:crypto";
 import { ApiClient } from "./apiClient";
 import {
   CanceledWithTaskError,
@@ -25,7 +23,6 @@ import {
   RetryWithTaskError,
   isTriggerError,
 } from "./errors";
-import { createIOWithIntegrations } from "./ioWithIntegrations";
 import { calculateRetryAt } from "./retry";
 import { TriggerClient } from "./triggerClient";
 import { DynamicTrigger } from "./triggers/dynamic";
@@ -669,7 +666,7 @@ async function generateIdempotencyKey(keyMaterial: any[]) {
 
   const key = keys.join(":");
 
-  const hash = await webcrypto.subtle.digest("SHA-256", Buffer.from(key));
+  const hash = await crypto.subtle.digest("SHA-256", Buffer.from(key));
 
   return Buffer.from(hash).toString("hex");
 }
