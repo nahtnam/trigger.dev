@@ -1,0 +1,12 @@
+diff --git a/dist/index.js b/dist/index.js
+index 8d42518fa6402ded2a4b1f197111a67fd9e5a7a5..6c0e7002f112130c70c380e66c6a70991eab87bc 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -1637,7 +1637,6 @@ async function runEsbuild(options, {
+   });
+   await pluginContainer.buildStarted();
+   const esbuildPlugins = [
+-    format === "cjs" && nodeProtocolPlugin(),
+     {
+       name: "modify-options",
+       setup(build2) {

@@ -69,7 +69,9 @@
   },
   "pnpm": {
     "patchedDependencies": {
-      "@changesets/assemble-release-plan@5.2.4": "patches/@changesets__assemble-release-plan@5.2.4.patch"
+      "@changesets/assemble-release-plan@5.2.4": "patches/@changesets__assemble-release-plan@5.2.4.patch",
+      "tsup@7.2.0": "patches/tsup@7.2.0.patch",
+      "tsup@6.5.0": "patches/tsup@6.5.0.patch"
     }
   }
 }
