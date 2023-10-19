@@ -17,12 +17,17 @@ import { appEnvTitleTag } from "./utils";
 import { ErrorBoundary as HighlightErrorBoundary } from "@highlight-run/react";
 import { useHighlight } from "./hooks/useHighlight";
 import { ExternalScripts } from "remix-utils";
-import { withDevTools } from "remix-development-tools";
 import rdtStylesheet from "remix-development-tools/index.css";
+import { enableRemixDevTools } from "./utils/remixDevTools.server";
+
+console.log("REMIX_DEVTOOLS_ENABLED", enableRemixDevTools);
 
 export const links: LinksFunction = () => {
-  return process.env.NODE_ENV === "development" ? [{ rel: "stylesheet", href: rdtStylesheet }, { rel: "stylesheet", href: tailwindStylesheetUrl }] : [{ rel: "stylesheet", href: tailwindStylesheetUrl }]
-}
+  return [
+    { rel: "stylesheet", href: tailwindStylesheetUrl },
+    ...(enableRemixDevTools ? [{ rel: "stylesheet", href: rdtStylesheet }] : []),
+  ];
+};
 
 export const meta: TypedMetaFunction<typeof loader> = ({ data }) => ({
   title: `Trigger.dev${appEnvTitleTag(data?.appEnv)}`,
@@ -116,4 +121,11 @@ function App() {
   );
 }
 
-export default process.env.NODE_ENV === "development" ? withDevTools(App) : App;
+let AppExport = App;
+// This imports the dev tools only if you're in development
+if (enableRemixDevTools) {
+  const { withDevTools } = require("remix-development-tools");
+  AppExport = withDevTools(AppExport);
+}
+
+export default AppExport;
