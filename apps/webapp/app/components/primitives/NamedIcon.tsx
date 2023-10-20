@@ -69,6 +69,7 @@ import { SaplingIcon } from "~/assets/icons/SaplingIcon";
 import { TwoTreesIcon } from "~/assets/icons/TwoTreesIcon";
 import { OneTreeIcon } from "~/assets/icons/OneTreeIcon";
 import { tablerIcons } from "~/utils/tablerIcons";
+import tablerSpritePath from "./tabler-sprite.svg";
 
 const icons = {
   account: (className: string) => <UserCircleIcon className={cn("text-slate-400", className)} />,
@@ -258,7 +259,7 @@ export function NamedIconInBox({
 export function TablerIcon({ name, className }: { name: string; className?: string }) {
   return (
     <svg className={className}>
-      <use xlinkHref={`/icons/tabler-sprite.svg#${name}`} />
+      <use xlinkHref={`${tablerSpritePath}#${name}`} />
     </svg>
   );
 }
