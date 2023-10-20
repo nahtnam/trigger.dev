@@ -258,7 +258,7 @@ export function NamedIconInBox({
 
 export function TablerIcon({ name, className }: { name: string; className?: string }) {
   return (
-    <svg className={className}>
+    <svg className={cn("stroke-[1.5]", className)}>
       <use xlinkHref={`${tablerSpritePath}#${name}`} />
     </svg>
   );
